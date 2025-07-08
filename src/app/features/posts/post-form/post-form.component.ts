@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 import { PostService } from '../../../core/services/post.service';
 import { Post } from '../../../core/models/post.model';
 import { ToastService } from '../../../core/services/toast.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-post-form',
@@ -18,6 +19,7 @@ import { ToastService } from '../../../core/services/toast.service';
   templateUrl: './post-form.component.html',
   styleUrls: ['./post-form.component.scss'],
   providers: [PostService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class PostFormComponent implements OnInit {
   postForm!: FormGroup;
@@ -47,7 +49,8 @@ export class PostFormComponent implements OnInit {
         next: (data: Post) => {
           this.postForm.patchValue(data);
         },
-        error: () => this.toastService.show('Error al crear publicación', 'error'),
+        error: () =>
+          this.toastService.show('Error al crear publicación', 'error'),
       });
     }
   }
@@ -63,11 +66,14 @@ export class PostFormComponent implements OnInit {
 
     request$.subscribe({
       next: () => {
-        this.toastService.show('Publicación creada con éxito');
+        this.toastService.show('Publicación guardada con éxito');
         this.router.navigate(['/posts']);
       },
       error: () => {
-        this.toastService.show('Ocurrió un error al guardar la publicación', 'error');
+        this.toastService.show(
+          'Ocurrió un error al guardar la publicación',
+          'error'
+        );
       },
     });
   }

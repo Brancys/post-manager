@@ -1,5 +1,11 @@
 <div class="form-container">
-  <h2>{{ isEdit ? 'Editar Publicación' : 'Nueva Publicación' }}</h2>
+  <h2>
+    <iconify-icon
+      [icon]="isEdit ? 'mdi:pencil-outline' : 'mdi:plus-circle-outline'"
+      class="icon header-icon"
+    ></iconify-icon>
+    {{ isEdit ? 'Editar Publicación' : 'Nueva Publicación' }}
+  </h2>
 
   <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -27,9 +33,16 @@
     </div>
 
     <button type="submit" [disabled]="postForm.invalid">
+      <iconify-icon
+        [icon]="isEdit ? 'mdi:content-save-edit-outline' : 'mdi:content-save-outline'"
+        class="icon button-icon"
+      ></iconify-icon>
       {{ isEdit ? 'Actualizar' : 'Crear' }}
     </button>
 
-    <a routerLink="/posts">← Cancelar</a>
+    <a routerLink="/posts">
+      <iconify-icon icon="mdi:arrow-left" class="icon button-icon"></iconify-icon>
+      Cancelar
+    </a>
   </form>
 </div>
