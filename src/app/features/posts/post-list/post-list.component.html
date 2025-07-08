@@ -18,15 +18,23 @@
         <td>{{ post.userId }}</td>
         <td>{{ post.body }}</td>
         <td class="actions">
-          <a [routerLink]="['/posts/view', post.id]">Ver</a>
-          <a [routerLink]="['/posts/edit', post.id]">Editar</a>
-          <button (click)="post.id && deletePost(post.id)">Eliminar</button>
+          <a [routerLink]="['/posts/view', post.id]" title="Ver publicación">
+            <iconify-icon icon="mdi:eye-outline" class="icon action-icon"></iconify-icon>
+          </a>
+
+          <a [routerLink]="['/posts/edit', post.id]" title="Editar publicación">
+            <iconify-icon icon="mdi:pencil-outline" class="icon action-icon"></iconify-icon>
+          </a>
+
+          <button (click)="post.id && deletePost(post.id)" title="Eliminar publicación">
+            <iconify-icon icon="mdi:trash-can-outline" class="icon danger-icon"></iconify-icon>
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<a routerLink="/posts/create" class="fab">+</a>
-
-
+<a routerLink="/posts/create" class="fab" title="Nueva publicación">
+  <iconify-icon icon="mdi:plus" class="icon fab-icon"></iconify-icon>
+</a>

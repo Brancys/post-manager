@@ -25,21 +25,48 @@ thead {
   background-color: #f2f4f7;
 }
 
-.actions a,
-.actions button {
-  margin-right: 8px;
-  font-size: 14px;
-}
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 
-.actions button {
-  color: #e53935;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+  a,
+  button {
+    font-size: 14px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
 
-.actions button:hover {
-  text-decoration: underline;
+  button {
+    color: #e53935;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  iconify-icon {
+    font-size: 22px;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.2s ease;
+
+    &.danger-icon {
+      color: #e53935;
+    }
+
+    &.danger-icon:hover {
+      color: #c62828;
+    }
+  }
+
+  a:hover iconify-icon {
+    color: #0056b3;
+  }
 }
 
 .fab {
@@ -59,8 +86,13 @@ thead {
   text-decoration: none;
   z-index: 999;
   transition: background-color 0.3s ease;
-}
 
-.fab:hover {
-  background-color: #218838;
+  &:hover {
+    background-color: #218838;
+  }
+
+  iconify-icon {
+    font-size: 28px;
+    color: white;
+  }
 }

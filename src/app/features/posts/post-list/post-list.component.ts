@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PostService } from '../../../core/services/post.service';
 import { Post } from '../../../core/models/post.model';
 import { RouterModule } from '@angular/router';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-post-list',
@@ -11,6 +12,7 @@ import { RouterModule } from '@angular/router';
   providers: [PostService],
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class PostListComponent implements OnInit {
   posts: Post[] = [];
