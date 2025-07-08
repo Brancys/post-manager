@@ -1,59 +1,61 @@
-# PostManager
+# 📝 Post Manager – Prueba Técnica Angular + Git
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Este proyecto es una prueba técnica desarrollada con Angular para la gestión de publicaciones, consumiendo la API pública de JSONPlaceholder.
 
-## Development server
+## 🚀 Tecnologías utilizadas
 
-To start a local development server, run:
+- Angular 16+ (standalone components)
+- TypeScript con tipado estricto
+- JSONPlaceholder API
+- Reactive Forms
+- Angular Router
+- Git (manejo de ramas y commits)
+- Iconify (librería de íconos)
+- Toast notifications y Spinner
+- SCSS modular por componente
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🎯 Funcionalidades implementadas
 
-## Code scaffolding
+### 📄 Listado de publicaciones
+- Muestra máximo 10 publicaciones.
+- Cada item muestra: título, usuario (`userId`) y contenido (`body`).
+- Acciones disponibles: Ver, Editar y Eliminar (con confirmación).
+- Íconos visuales para cada acción.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 🔍 Ver detalle de publicación
+- Vista individual con título, usuario y contenido.
+- Diseño limpio con botón para volver al listado.
 
-```bash
-ng generate component component-name
-```
+### ➕ Crear nueva publicación
+- Formulario reactivo con validaciones:
+  - `userId`: numérico obligatorio.
+  - `title`: texto obligatorio (mínimo 5 caracteres).
+  - `body`: obligatorio.
+- Toast de éxito tras crear.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### ✏️ Editar publicación
+- Precarga los datos en el formulario.
+- Validaciones iguales a creación.
+- Toast de éxito tras actualizar.
 
-```bash
-ng generate --help
-```
+### 🗑️ Eliminar publicación
+- Confirmación previa con mensaje simulado de éxito (la API no elimina realmente).
 
-## Building
+---
 
-To build the project run:
+## 💎 Extras / Bonus implementados
 
-```bash
-ng build
-```
+- ✅ Loading spinner al cargar datos
+- ✅ Notificaciones tipo toast
+- ✅ Librería de íconos (`Iconify`)
+- ✅ Estilos visuales en SCSS
+- ✅ Código limpio y modular
+- ✅ Navegación usando rutas standalone
+- ✅ Sin estilos inline (`style="..."`)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 📦 Estructura del proyecto
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
