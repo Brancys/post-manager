@@ -1,0 +1,34 @@
+<h2>{{ isEdit ? 'Editar Publicación' : 'Nueva Publicación' }}</h2>
+<div class="form-container">
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="userId">Usuario ID:</label>
+      <input id="userId" type="number" formControlName="userId" />
+      <div *ngIf="postForm.get('userId')?.invalid && postForm.get('userId')?.touched">
+        Usuario requerido.
+      </div>
+    </div>
+
+    <div>
+      <label for="title">Título:</label>
+      <input id="title" type="text" formControlName="title" />
+      <div *ngIf="postForm.get('title')?.invalid && postForm.get('title')?.touched">
+        Título requerido (mínimo 5 caracteres).
+      </div>
+    </div>
+
+    <div>
+      <label for="body">Contenido:</label>
+      <textarea id="body" formControlName="body"></textarea>
+      <div *ngIf="postForm.get('body')?.invalid && postForm.get('body')?.touched">
+        Contenido requerido.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="postForm.invalid">
+      {{ isEdit ? 'Actualizar' : 'Crear' }}
+    </button>
+    <a routerLink="/posts">Cancelar</a>
+
+  </form>
+<div>
