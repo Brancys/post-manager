@@ -59,3 +59,53 @@ Este proyecto es una prueba técnica desarrollada con Angular para la gestión d
 
 ## 📦 Estructura del proyecto
 
+```plaintext
+src/
+├── app/
+│   ├── core/               # Modelos y servicios (Post)
+│   │   ├── models/
+│   │   │   └── post.model.ts
+│   │   └── services/
+│   │       └── post.service.ts
+│   ├── features/
+│   │   └── posts/
+│   │       ├── post-list/
+│   │       │   ├── post-list.component.ts/html/scss
+│   │       ├── post-form/
+│   │       │   ├── post-form.component.ts/html/scss
+│   │       ├── post-detail/
+│   │       │   ├── post-detail.component.ts/html/scss
+│   │       └── posts.routes.ts
+│   └── app.component.ts
+│   └── app.config.ts
+```
+---
+
+## Instalación y ejecución
+
+```bash
+git clone https://github.com/brancys/post-manager.git
+cd post-manager
+```
+
+```bash
+npm install
+```
+
+```bash
+ng serve
+```
+Ingresa a:
+```bash
+http://localhost:4200
+```
+---
+### Autor
+Brancys: Fullstack Developer
+
+### 📝 Notas
+La API de JSONPlaceholder no guarda cambios realmente (POST/PUT/DELETE son simulados).
+
+Se utilizó tipado estricto en todas las interfaces, observables y formularios.
+
+Cada componente tiene su SCSS modular, sin uso de estilos inline.
