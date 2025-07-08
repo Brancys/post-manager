@@ -1,12 +1,17 @@
+<div *ngIf="isLoading">Cargando publicación...</div>
 
-  <div *ngIf="isLoading">
-    Cargando publicación...
+<div *ngIf="!isLoading && post" class="detail-card">
+  <h2>{{post.title }}</h2>
+
+  <div class="detail-item">
+    <span class="label">Usuario:</span>
+    <span>{{ post.userId }}</span>
   </div>
 
-  <div class="detail-card" *ngIf="!isLoading && post">
-    <h2>{{ post.title }}</h2>
-    <p><strong>Usuario:</strong> {{ post.userId }}</p>
-    <p><strong>Contenido:</strong> {{ post.body }}</p>
-
-    <a routerLink="/posts">← Volver al listado</a>
+  <div class="detail-item">
+    <span class="label">Contenido:</span>
+    <p>{{ post.body }}</p>
   </div>
+
+  <a routerLink="/posts" class="back-link">← Volver al listado</a>
+</div>

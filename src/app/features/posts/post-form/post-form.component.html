@@ -1,26 +1,27 @@
-<h2>{{ isEdit ? 'Editar Publicación' : 'Nueva Publicación' }}</h2>
 <div class="form-container">
+  <h2>{{ isEdit ? 'Editar Publicación' : 'Nueva Publicación' }}</h2>
+
   <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
-    <div>
+    <div class="form-group">
       <label for="userId">Usuario ID:</label>
       <input id="userId" type="number" formControlName="userId" />
-      <div *ngIf="postForm.get('userId')?.invalid && postForm.get('userId')?.touched">
+      <div class="error" *ngIf="postForm.get('userId')?.invalid && postForm.get('userId')?.touched">
         Usuario requerido.
       </div>
     </div>
 
-    <div>
+    <div class="form-group">
       <label for="title">Título:</label>
       <input id="title" type="text" formControlName="title" />
-      <div *ngIf="postForm.get('title')?.invalid && postForm.get('title')?.touched">
+      <div class="error" *ngIf="postForm.get('title')?.invalid && postForm.get('title')?.touched">
         Título requerido (mínimo 5 caracteres).
       </div>
     </div>
 
-    <div>
+    <div class="form-group">
       <label for="body">Contenido:</label>
-      <textarea id="body" formControlName="body"></textarea>
-      <div *ngIf="postForm.get('body')?.invalid && postForm.get('body')?.touched">
+      <textarea id="body" rows="6" formControlName="body"></textarea>
+      <div class="error" *ngIf="postForm.get('body')?.invalid && postForm.get('body')?.touched">
         Contenido requerido.
       </div>
     </div>
@@ -28,7 +29,7 @@
     <button type="submit" [disabled]="postForm.invalid">
       {{ isEdit ? 'Actualizar' : 'Crear' }}
     </button>
-    <a routerLink="/posts">Cancelar</a>
 
+    <a routerLink="/posts">← Cancelar</a>
   </form>
-<div>
+</div>
