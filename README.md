@@ -101,7 +101,7 @@ http://localhost:4200
 ```
 ---
 ### Autor
-Brancys: Fullstack Developer
+Brancys: Trainee Developer
 
 ### 📝 Notas
 La API de JSONPlaceholder no guarda cambios realmente (POST/PUT/DELETE son simulados).
