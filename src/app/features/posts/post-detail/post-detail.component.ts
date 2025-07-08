@@ -5,6 +5,7 @@ import { PostService } from '../../../core/services/post.service';
 import { Post } from '../../../core/models/post.model';
 import { RouterModule } from '@angular/router';
 import { ToastService } from '../../../core/services/toast.service';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-post-detail',
@@ -13,6 +14,7 @@ import { ToastService } from '../../../core/services/toast.service';
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.scss'],
   providers: [PostService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class PostDetailComponent implements OnInit {
   post?: Post;

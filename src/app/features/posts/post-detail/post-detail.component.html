@@ -1,11 +1,19 @@
 <div *ngIf="isLoading">Cargando publicación...</div>
 
 <div *ngIf="!isLoading && post" class="detail-card">
-  <h2>{{post.title }}</h2>
+  <h2>
+    <iconify-icon icon="mdi:file-document-outline" class="icon header-icon"></iconify-icon>
+    Detalle de Publicación
+  </h2>
+
+  <div class="detail-item">
+    <span class="label">Título:</span>
+    <p>{{ post.title }}</p>
+  </div>
 
   <div class="detail-item">
     <span class="label">Usuario:</span>
-    <span>{{ post.userId }}</span>
+    <p>{{ post.userId }}</p>
   </div>
 
   <div class="detail-item">
@@ -13,5 +21,9 @@
     <p>{{ post.body }}</p>
   </div>
 
-  <a routerLink="/posts" class="back-link">← Volver al listado</a>
+  <a routerLink="/posts" class="back-button">
+    <iconify-icon icon="mdi:arrow-left" class="icon"></iconify-icon>
+    <span>Volver al listado</span>
+  </a>
+
 </div>
